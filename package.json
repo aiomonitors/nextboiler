@@ -9,7 +9,13 @@
   "scripts": {
     "dev": "next dev",
     "start": "next",
-    "build": "next build"
+    "build": "next build",
+    "fix": "yarn fix:eslint && yarn fix:prettier",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint:eslint": "eslint --ext .jsx,.js,.ts,.tsx",
+    "lint:prettier": "prettier --check ./src/**/*.{ts,tsx,js,jsx}",
+    "fix:eslint": "eslint --fix --ext .jsx,.js,.ts,.tsx",
+    "fix:prettier": "prettier --write ./src/**/*.{ts,tsx,js,jsx}"
   },
   "devDependencies": {
     "@types/node": "^15.0.1",
